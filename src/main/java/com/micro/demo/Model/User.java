@@ -4,11 +4,16 @@ package com.micro.demo.Model;
  *
  */
 
-import java.sql.Date;
+import com.fasterxml.jackson.annotation.JsonFilter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.sql.Date;
+//@JsonFilter("filterByEmail")
 public class User  {
     private Long license_number;
+    //@JsonIgnore
     private String first_name;
+    //@JsonIgnore
     private String last_name;
     private Date license_date;
     private String email;
@@ -66,12 +71,12 @@ public class User  {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + license_number +
-                ", nom=" + last_name +
-                ", prenom=" + first_name +
-                ", license_date=" + license_date +
-                ", email=" + email +
+        return "User {" + "\n" +
+                "id=" + license_number + "\n" +
+                "nom=" + last_name + "\n" +
+                "prenom=" + first_name + "\n" +
+                "license_date=" + license_date + "\n" +
+                "email=" + email + "\n" +
                 "}";
     }
 }

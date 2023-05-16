@@ -22,7 +22,6 @@ public class UserDaoImpl implements UserDao{
     public List<User> findAll() {
         return users;
     }
-
     @Override
     public User findById(Long id) {
         for (User user : users) {
@@ -32,10 +31,14 @@ public class UserDaoImpl implements UserDao{
         }
         return null;
     }
-
     @Override
     public User save(User user) {
         users.add(user);
         return user;
+    }
+    @Override
+    public User delete(User user) {
+        users.remove(user);
+        return null;
     }
 }
