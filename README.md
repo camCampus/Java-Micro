@@ -25,6 +25,21 @@ public class DemoApplication {
 }
 ```
 ---
+### `@Bean`  
+**Annotation pour declarer un object instancier au démarrage de l'application (`Singleton`) et qui va pouvoir être injecter dans notre application**
+
+```java
+    @Bean
+public RestTemplate getRestTemplate() {
+        return new RestTemplate();
+        }
+```
+### `@Alowed`  
+**Annotation à utiliser pour pouvoir injecter une instance d'un object annoté avec `@Bean`**  
+```java
+@Autowired
+private RestTemplate restTemplate;
+```
 
 ### `@RestController`  
 **Combinaison de deux annotations pour traiter les rêquetes et répondre directement en Json**  
@@ -73,6 +88,21 @@ public User getUserById(@PathVariable int id){
 ```java
     @PostMapping("/users")
     @ApiIgnore
+```
+---
+
+### **`@Api`**
+**Dans un controller permet de commenter le controller pour la doc api**
+```java
+@Api("API pour les opérations CRUD sur les users.")
+```
+---
+
+### **`@ApiOperation`**
+**Dans un controller permet de commenter les methodes `@...Mapping` pour la doc api**
+```java
+@ApiOperation(value = "Récupère la liste de tous les users")
+@GetMapping("/users")
 ```
 ---
 ### **`@RequestBody`**
@@ -148,7 +178,16 @@ public class User {
     private String email;
 }
 ```
+---
+### **`@JsonIgnoreProperties(ignoreUnknown = true)`**
+**Annotation de Jackons Json processing library pour indiquer que toutes les proprétés qui ne sont pas de type Json doivent être ignorées**
 
+```java
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Quote {
+}
+```
+---
 ### **`@Repository`**
 **Annotation pour indiquer qu'il s'agit d'une classe qui gère des données**  
 
