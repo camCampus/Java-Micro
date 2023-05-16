@@ -26,6 +26,21 @@ public class DemoApplication {
 ```
 ---
 
+### `@Bean`  
+**Annotation pour declarer un object instancier au démarrage de l'application (`Singleton`) et qui va pouvoir être injecter dans notre application**
+
+```java
+    @Bean
+public RestTemplate getRestTemplate() {
+        return new RestTemplate();
+        }
+```
+### `@Autowired`  
+**Annotation à utiliser pour pouvoir injecter une instance d'un object annoté avec `@Bean`**  
+```java
+@Autowired
+private RestTemplate restTemplate;
+```
 ### `@RestController`  
 **Combinaison de deux annotations pour traiter les rêquetes et répondre directement en Json**  
 
