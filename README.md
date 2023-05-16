@@ -67,6 +67,14 @@ public User getUserById(@PathVariable int id){
 }
 ```
 ---
+
+### **`@ApiIgnore`**
+**Dans un controller sous une methode `@...Mapping` permet de filtrer le endpoint pour ne pas l'afficher dans la doc de Swagger**  
+```java
+    @PostMapping("/users")
+    @ApiIgnore
+```
+---
 ### **`@RequestBody`**
 **Convertie le body d'une rêquete en objet java**  
 Dans l'expemple le body de la rêquete contient 
@@ -150,3 +158,10 @@ public interface UserRepository extends JpaRepository<Product, Long> {
     User findById(int id);
 }
 ```
+---
+
+### **`@EnableSwagger2`**
+**Annotation à placer dans la classe main en dessous de `@SpringBootApplication` pour pouvoir utiliser swagger et générer une doc api.**
+Il faut aussi ajouter: `spring.mvc.pathmatch.matching-strategy=ant_path_matcher` dans application properties.  
+On pourra ensuite placer `@EnableSwagger2` lorsque l'on veut utiliser les méthodes de swagger comme dans un fichier de config par exemple.
+---

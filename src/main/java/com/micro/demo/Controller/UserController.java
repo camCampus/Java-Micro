@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import springfox.documentation.annotations.ApiIgnore;
 
 import java.net.URI;
 import java.util.List;
@@ -42,6 +43,7 @@ public class UserController {
     }
 
     @PostMapping("/users")
+    @ApiIgnore
     public ResponseEntity<User> addUser(@RequestBody User user) {
        User userAdded = userDao.save(user);
        if (Objects.isNull(userAdded)) {
