@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.sql.Date;
-//@JsonFilter("filterByEmail")
+@JsonFilter("filterByEmail")
 public class User  {
     private Long license_number;
     //@JsonIgnore
