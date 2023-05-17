@@ -8,6 +8,7 @@ import com.micro.demo.Services.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,19 +42,19 @@ public class UserController {
 
     @ApiOperation(value = "Permet d'ajouter un user")
     @PostMapping("/users")
-    public String addUser(@RequestBody User user) {
+    public ResponseEntity<String> addUser(@RequestBody User user) {
         return userService.addUser(user);
     }
 
     @ApiOperation(value = "Permet de modifier un user via son numero de permis")
     @PutMapping("/users")
-    String replaceUser(@RequestBody User user) {
+    ResponseEntity<String> replaceUser(@RequestBody User user) {
         return userService.updateUser(user);
     }
 
     @ApiOperation(value = "Permet de supprimer un user via son numero de permis")
     @DeleteMapping("/user/{id}")
-    String deleteUser(@PathVariable Long id) {
+    ResponseEntity<String> deleteUser(@PathVariable Long id) {
         return userService.deleteUser(id);
     }
 

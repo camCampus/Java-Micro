@@ -1,15 +1,16 @@
 package com.micro.demo.Services;
 
 import com.micro.demo.Model.User;
+import org.springframework.http.ResponseEntity;
 
 public interface UserService {
 
     Iterable<User> getAll();
     User getUser(Long licenseNumber);
 
-    String addUser(User user);
+    ResponseEntity<String> addUser(User user);
 
-    String updateUser(User user);
+    ResponseEntity<String> updateUser(User user);
 
-    String deleteUser(Long licenseNumber);
+    ResponseEntity<String> deleteUser(Long licenseNumber);
 }
