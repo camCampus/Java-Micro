@@ -203,8 +203,9 @@ public interface UserRepository extends JpaRepository<Product, Long> {
 ### **`@EnableSwagger2`**
 **Annotation à placer dans la classe main en dessous de `@SpringBootApplication` pour pouvoir utiliser swagger et générer une doc api.**  
 
-Il faut aussi ajouter: `spring.mvc.pathmatch.matching-strategy=ant_path_matcher` dans application properties.  
-On pourra ensuite placer `@EnableSwagger2` lorsque l'on veut utiliser les méthodes de swagger comme dans un fichier de config par exemple.
+**Il faut aussi ajouter: `spring.mvc.pathmatch.matching-strategy=ant_path_matcher` dans application properties.  
+On pourra ensuite placer `@EnableSwagger2` lorsque l'on veut utiliser les méthodes de swagger comme dans un fichier de config par exemple.**  
+
 ---
 
 ### **`@Entity`**
