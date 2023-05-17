@@ -40,6 +40,8 @@ public RestTemplate getRestTemplate() {
 @Autowired
 private RestTemplate restTemplate;
 ```
+---
+
 ### `@RestController`  
 **Combinaison de deux annotations pour traiter les rêquetes et répondre directement en Json**  
 
@@ -203,4 +205,15 @@ public interface UserRepository extends JpaRepository<Product, Long> {
 
 Il faut aussi ajouter: `spring.mvc.pathmatch.matching-strategy=ant_path_matcher` dans application properties.  
 On pourra ensuite placer `@EnableSwagger2` lorsque l'on veut utiliser les méthodes de swagger comme dans un fichier de config par exemple.
+---
+
+### **`@Entity`**
+**Annotation pour indiquer que la classe doit être prise en compte comme entity pour accéder à la base de donées**
+
+### **`@Id`**
+**Annotation pour indiquer qu'il faut une clef unique**
+
+### **`@GeneratedValue`**  
+**Annotation pour que l'id soit autogénérée**
+
 ---

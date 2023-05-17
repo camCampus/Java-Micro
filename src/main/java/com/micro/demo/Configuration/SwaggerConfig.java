@@ -1,4 +1,4 @@
-package com.micro.demo.configuration;
+package com.micro.demo.Configuration;
 
 
 import org.springframework.context.annotation.Bean;

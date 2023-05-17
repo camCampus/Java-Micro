@@ -4,61 +4,69 @@ package com.micro.demo.Model;
  *
  */
 
-import com.fasterxml.jackson.annotation.JsonFilter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.sql.Date;
-@JsonFilter("filterByEmail")
+//@JsonFilter("filterByEmail")
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User  {
-    private Long license_number;
+    @Id
+    private Long licenseNumber;
     //@JsonIgnore
-    private String first_name;
+    private String firstName;
     //@JsonIgnore
-    private String last_name;
-    private Date license_date;
+    private String lastName;
+    private Date birthDate;
     private String email;
-    public User() {
+//    public User() {
+//
+//    }
+//
+//    public User(Long licenseNumber, String firstName, String lastName, Date birthDate, String email) {
+//        this.licenseNumber = licenseNumber;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.birthDate = birthDate;
+//        this.email = email;
+//    }
 
+    public Long getLicenseNumber() {
+        return licenseNumber;
     }
 
-    public User(Long license_number, String first_name, String last_name, Date license_date, String email) {
-        this.license_number = license_number;
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.license_date = license_date;
-        this.email = email;
+    public void setLicenseNumber(Long licenseNumber) {
+        this.licenseNumber = licenseNumber;
     }
 
-    public Long getLicense_number() {
-        return license_number;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setLicense_number(Long license_number) {
-        this.license_number = license_number;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
-    }
-
-    public Date getLicense_date() {
-        return license_date;
-    }
-
-    public void setLicense_date(Date license_date) {
-        this.license_date = license_date;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getEmail() {
@@ -72,10 +80,10 @@ public class User  {
     @Override
     public String toString() {
         return "User {" + "\n" +
-                "id=" + license_number + "\n" +
-                "nom=" + last_name + "\n" +
-                "prenom=" + first_name + "\n" +
-                "license_date=" + license_date + "\n" +
+                "id=" + licenseNumber + "\n" +
+                "nom=" + lastName + "\n" +
+                "prenom=" + firstName + "\n" +
+                "license_date=" + birthDate + "\n" +
                 "email=" + email + "\n" +
                 "}";
     }
