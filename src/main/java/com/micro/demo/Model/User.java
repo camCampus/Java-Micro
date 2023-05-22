@@ -25,17 +25,7 @@ public class User  {
     private String lastName;
     private Date birthDate;
     private String email;
-//    public User() {
-//
-//    }
-//
-//    public User(Long licenseNumber, String firstName, String lastName, Date birthDate, String email) {
-//        this.licenseNumber = licenseNumber;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.birthDate = birthDate;
-//        this.email = email;
-//    }
+
 
     public Long getLicenseNumber() {
         return licenseNumber;
