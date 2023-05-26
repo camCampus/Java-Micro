@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Date;
+import java.time.LocalDate;
+
 //@JsonFilter("filterByEmail")
 @Entity
 @Data
@@ -23,7 +25,7 @@ public class User  {
     private String firstName;
     //@JsonIgnore
     private String lastName;
-    private Date birthDate;
+    private LocalDate birthDate;
     private String email;
 
 
@@ -51,11 +53,11 @@ public class User  {
         this.lastName = lastName;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 

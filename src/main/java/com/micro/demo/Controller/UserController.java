@@ -48,7 +48,7 @@ public class UserController {
 	@ApiOperation(value = "Permet d'ajouter un user")
 	@PostMapping("/users")
 	public ResponseEntity<String> addUser(@RequestBody User user) throws UnderAgeException {
-		LocalDate useBirthDate = user.getBirthDate().toLocalDate();
+		LocalDate useBirthDate = user.getBirthDate();
 		LocalDate currentDate = LocalDate.now();
 		int UserAge = Period.between(useBirthDate, currentDate).getYears();
 		if (UserAge > 25) {
